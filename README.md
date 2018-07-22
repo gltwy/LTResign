@@ -1,6 +1,8 @@
 # LTResign
 iOS一键重签名，轻松制作iOS App分身、以及动态注入dylib后重签名安装到设备等
 
+![image](https://github.com/gltwy/LTResign/blob/master/glt.gif)
+
 ## 准备工作
 ```bash
 1. 已解密（脱壳）的App， 从PP助手或者使用经过越狱设备解密的ipa
