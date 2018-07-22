@@ -1,4 +1,5 @@
 # LTResign
+iOS一键重签名，轻松制作iOS App分身、以及动态注入dylib后重签名安装到设备等
 
 ## 准备工作
 ```bash
