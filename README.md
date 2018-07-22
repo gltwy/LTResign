@@ -15,7 +15,7 @@ python ltresign.py -s .app文件路径 -d 证书id -m embedded.mobileprovision -
 ```bash
 security find-identity -v -p codesigning
 ```
-embedded.mobileprovision获取
+- embedded.mobileprovision获取
 ```bash
 新建Xcode项目，选择设备，然后Build -> Products -> .app显示包内容，在包内容中找到embedded.mobileprovision文件
 ```
