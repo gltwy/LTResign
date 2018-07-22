@@ -19,7 +19,7 @@ security find-identity -v -p codesigning
 ```bash
 新建Xcode项目，选择设备，然后Build -> Products -> .app显示包内容，在包内容中找到embedded.mobileprovision文件
 ```
-- 使用示例
+- 使用示例（app -> ipa）
 1. 解压ipa 
 2. 修改info.plist的Bundle identifier(CFBundleIdentifier), 此步可忽略，若忽略会覆盖已安装的同名（Bundle identifier）App
 ```bash
