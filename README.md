@@ -7,11 +7,11 @@ iOS一键重签名，轻松制作iOS App分身、以及动态注入dylib后重�
 2. 开发者证书
 ```
 ## 使用说明
-命令说明
+- 命令说明
 ```bash
 python ltresign.py -s .app文件路径 -d 证书id -m embedded.mobileprovision -o 导出路径
 ```
-证书id获取：
+- 证书id获取：
 ```bash
 security find-identity -v -p codesigning
 ```
@@ -19,7 +19,7 @@ embedded.mobileprovision获取
 ```bash
 新建Xcode项目，选择设备，然后Build -> Products -> .app显示包内容，在包内容中找到embedded.mobileprovision文件
 ```
-使用示例
+- 使用示例
 1. 解压ipa 
 2. 修改info.plist的Bundle identifier(CFBundleIdentifier), 此步可忽略，若忽略会覆盖已安装的同名（Bundle identifier）App
 ```bash
