@@ -8,8 +8,17 @@
 ## 使用说明
 
 ```bash
-python ltresign.py -s .app文件路径 -d 证书id -m 描述文件 -o 导出路径
+python ltresign.py -s .app文件路径 -d 证书id -m embedded.mobileprovision -o 导出路径
 ```
+证书id获取：
+```bash
+security find-identity -v -p codesigning
+```
+embedded.mobileprovision获取
+```bash
+新建Xcode项目，选择设备，然后Build -> Products -> .app显示包内容，在包内容中找到embedded.mobileprovision文件
+```
+
 示例
 ```bash
 python ltresign.py -s WeChat.app -d "iPhone Developer: test test (XXXXX)" -m embedded.mobileprovision -o glt_WeChat.ipa 
