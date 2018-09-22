@@ -1,6 +1,8 @@
 # LTResign
 iOS一键重签名，轻松制作iOS App分身、以及动态注入dylib后重签名安装到设备等
 
+![image](https://github.com/gltwy/LTResign/blob/master/show.png)
+
 ## 准备工作
 ```bash
 1. 已解密（脱壳）的App， 从PP助手或者使用经过越狱设备解密的ipa
@@ -16,7 +18,6 @@ python ltresign.py -l
 新建Xcode项目，选择设备，然后Build -> Products -> .app显示包内容，在包内容中找到embedded.mobileprovision文件
 ```
 #### 命令说明（注意有些参数为可选）
-![image](https://github.com/gltwy/LTResign/blob/master/show.png)
 
 - 使用方式1：ipa导出路径为当前目录，Display Name为原始，BundleIdentifier为原始
 ```bash
@@ -37,7 +38,7 @@ python ltresign.py -s .app文件路径或.ipa文件路径 -d 证书id -m embedde
 ```bash
 python ltresign.py -s .app文件路径或.ipa文件路径 -d 证书id -m embedded.mobileprovision -o ./glttest.ipa -b "新的bundleId" -n "新的名称"
 ```
-- ...
+- 更多
 ```bash
 根据自己的情况配置参数
 ```
