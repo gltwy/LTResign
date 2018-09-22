@@ -26,22 +26,22 @@ python ltresign.py -l
 ```
 #### 命令说明（注意有些参数为可选）
 
-- 使用方式1：ipa导出路径为当前目录，Display Name为原始，BundleIdentifier为原始
+- 使用方式1：指定ipa导出路径为当前目录，Display Name为原始，BundleIdentifier为原始
 ```bash
 python ltresign.py -s .app文件路径或.ipa文件路径 -d 证书id -m embedded.mobileprovision
 ```
 
-- 使用方式2：ipa导出路径为当前目录下的glttest.ipa文件，Display Name为原始，BundleIdentifier为原始
+- 使用方式2：指定ipa导出路径为当前目录下的glttest.ipa文件，Display Name为原始，BundleIdentifier为原始
 ```bash
 python ltresign.py -s .app文件路径或.ipa文件路径 -d 证书id -m embedded.mobileprovision -o ./glttest.ipa
 ```
 
-- 使用方式3：ipa导出路径为当前目录下的glttest.ipa文件，Display Name为原始，BundleIdentifier为设置的值
+- 使用方式3：指定ipa导出路径为当前目录下的glttest.ipa文件，Display Name为原始，BundleIdentifier为设置的值
 ```bash
 python ltresign.py -s .app文件路径或.ipa文件路径 -d 证书id -m embedded.mobileprovision -o ./glttest.ipa -b "新的bundleId"
 ```
 
-- 使用方式4：ipa导出路径为当前目录下的glttest.ipa文件，Display Name为设置的新的名称，BundleIdentifier为设置的值
+- 使用方式4：指定ipa导出路径为当前目录下的glttest.ipa文件，Display Name为设置的新的名称，BundleIdentifier为设置的值
 ```bash
 python ltresign.py -s .app文件路径或.ipa文件路径 -d 证书id -m embedded.mobileprovision -o ./glttest.ipa -b "新的bundleId" -n "新的名称"
 ```
@@ -57,7 +57,6 @@ python ltresign.py -s test.app -d "iPhone Developer: test test (XXXXX)" -m embed
 ```
 
 #### 命令执行过程
-命令执行过程效果图
 ![image](https://github.com/gltwy/LTResign/blob/master/process.jpeg)
 
 ## 安装效果图
