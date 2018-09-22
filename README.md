@@ -16,7 +16,6 @@ python ltresign.py -l
 新建Xcode项目，选择设备，然后Build -> Products -> .app显示包内容，在包内容中找到embedded.mobileprovision文件
 ```
 #### 命令说明（注意有些参数为可选）
-使用帮助效果图
 ![image](https://github.com/gltwy/LTResign/blob/master/show.png)
 
 - 使用方式1：ipa导出路径为当前目录，Display Name为原始，BundleIdentifier为原始
