@@ -7,24 +7,48 @@ iOS一键重签名，轻松制作iOS App分身、以及动态注入dylib后重�
 2. 开发者证书
 ```
 ## 使用说明
-- 命令说明
-```bash
-python ltresign.py -s .app文件路径 -d 证书id -m embedded.mobileprovision -o 导出路径
-```
 - 证书id获取：
 ```bash
-security find-identity -v -p codesigning
+python ltresign.py -l
 ```
 - embedded.mobileprovision获取
 ```bash
 新建Xcode项目，选择设备，然后Build -> Products -> .app显示包内容，在包内容中找到embedded.mobileprovision文件
 ```
-- 使用示例（app -> ipa）
-1. 解压ipa 
-2. 修改info.plist的Bundle identifier(CFBundleIdentifier), 此步可忽略，若忽略会覆盖已安装的同名（Bundle identifier）App
+- 命令说明（注意有些参数为可选）
+
+![image](https://github.com/gltwy/LTResign/blob/master/show.png)
+
+使用方式1：ipa导出路径为当前目录，Display Name为原始，BundleIdentifier为原始
 ```bash
-python ltresign.py -s WeChat.app -d "iPhone Developer: test test (XXXXX)" -m embedded.mobileprovision -o glt_WeChat.ipa 
+python ltresign.py -s .app文件路径或.ipa文件路径 -d 证书id -m embedded.mobileprovision
 ```
+
+使用方式2：ipa导出路径为当前目录下的glttest.ipa文件，Display Name为原始，BundleIdentifier为原始
+```bash
+python ltresign.py -s .app文件路径或.ipa文件路径 -d 证书id -m embedded.mobileprovision -o ./glttest.ipa
+```
+
+使用方式3：ipa导出路径为当前目录下的glttest.ipa文件，Display Name为原始，BundleIdentifier为设置的值
+```bash
+python ltresign.py -s .app文件路径或.ipa文件路径 -d 证书id -m embedded.mobileprovision -o ./glttest.ipa -b "新的bundleId"
+```
+
+使用方式4：ipa导出路径为当前目录下的glttest.ipa文件，Display Name为设置的新的名称，BundleIdentifier为设置的值
+```bash
+python ltresign.py -s .app文件路径或.ipa文件路径 -d 证书id -m embedded.mobileprovision -o ./glttest.ipa -b "新的bundleId" -n "新的名称"
+```
+...（根据自己的情况配置参数）
+- 使用示例（仅供参考），示例中test.app可以为ipa文件， -o为可选参数，-b为可选参数， -n为可选参数
+```bash
+python ltresign.py -s test.app -d "iPhone Developer: test test (XXXXX)" -m embedded.mobileprovision -o ./glttest.ipa -b "com.xxx.xxxx" -n "分身1"
+```
+
+- 命令执行过程
+![image](https://github.com/gltwy/LTResign/blob/master/process.jpeg)
+
+- 安装后的效果图
+![image](https://github.com/gltwy/LTResign/blob/master/finished.jpeg)
 
 ## Author
 - Email:  1282990794@qq.com
