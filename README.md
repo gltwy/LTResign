@@ -2,7 +2,7 @@
 iOS一键重签名，轻松制作iOS上任意应用或游戏分身、以及Hook后重签名安装到非越狱或越狱设备等，以下是功能说明
 ```bash
 1. 自动识别传入的文件为.app文件或.ipa文件，并进行不同的处理
-2. 可指定重签名后ipa导出路径
+2. 可指定重签名后ipa导出路径（不指定默认导出路径为当前路径下的glt_output.ipa）
 3. 可指定app显示名称（Bundle Display Name）
 4. 可指定导出ipa的BundleIdentifier
 5. 证书id获取
@@ -26,7 +26,7 @@ python ltresign.py -l
 ```
 #### 命令说明（注意有些参数为可选）
 
-- 使用方式一：指定ipa导出路径为当前目录，Display Name为原始，BundleIdentifier为原始
+- 使用方式一：默认ipa导出路径为当前目录下的glt_output.ipa，Display Name为原始，BundleIdentifier为原始
 ```bash
 python ltresign.py -s .app文件路径或.ipa文件路径 -d 证书id -m embedded.mobileprovision
 ```
