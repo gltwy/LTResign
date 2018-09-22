@@ -1,11 +1,18 @@
 # LTResign
-iOS一键重签名，轻松制作iOS App分身、以及动态注入dylib后重签名安装到设备等
+iOS一键重签名，轻松制作iOS上任意应用或游戏分身、以及Hook后重签名安装到非越狱或越狱设备等，以下是功能说明
+```bash
+1. 自动识别传入的文件为.app文件或.ipa文件，并进行不同的处理
+2. 可指定重签名后ipa导出路径
+3. 可指定app显示名称（Bundle Display Name）
+4. 可指定导出ipa的BundleIdentifier
+5. 证书id获取
+```
 
 ![image](https://github.com/gltwy/LTResign/blob/master/show.png)
 
 ## 准备工作
 ```bash
-1. 已解密（脱壳）的App， 从PP助手或者使用经过越狱设备解密的ipa
+1. 已解密（脱壳）的App， 从越狱助手下载或者使用经过越狱设备解密（使用Clutch、dumpdecrypted、frida等解密工具）的ipa
 2. 开发者证书
 ```
 ## 使用说明
