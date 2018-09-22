@@ -16,7 +16,7 @@ python ltresign.py -l
 新建Xcode项目，选择设备，然后Build -> Products -> .app显示包内容，在包内容中找到embedded.mobileprovision文件
 ```
 #### 命令说明（注意有些参数为可选）
-使用帮助
+使用帮助效果图
 ![image](https://github.com/gltwy/LTResign/blob/master/show.png)
 
 - 使用方式1：ipa导出路径为当前目录，Display Name为原始，BundleIdentifier为原始
@@ -39,15 +39,18 @@ python ltresign.py -s .app文件路径或.ipa文件路径 -d 证书id -m embedde
 python ltresign.py -s .app文件路径或.ipa文件路径 -d 证书id -m embedded.mobileprovision -o ./glttest.ipa -b "新的bundleId" -n "新的名称"
 ```
 - ...
+```bash
 根据自己的情况配置参数
+```
 
-#### 使用示例（仅供参考），示例中test.app可以为ipa文件， -o为可选参数，-b为可选参数， -n为可选参数
+#### 使用示例（仅供参考）
+示例中test.app可以为ipa文件， -o为可选参数，-b为可选参数， -n为可选参数
 ```bash
 python ltresign.py -s test.app -d "iPhone Developer: test test (XXXXX)" -m embedded.mobileprovision -o ./glttest.ipa -b "com.xxx.xxxx" -n "分身1"
 ```
 
 #### 命令执行过程
-命令执行过程效果图示例
+命令执行过程效果图
 ![image](https://github.com/gltwy/LTResign/blob/master/process.jpeg)
 
 ## 安装效果图
