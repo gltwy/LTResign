@@ -6,6 +6,12 @@ iOS一键重签名，轻松制作iOS上任意应用或游戏分身、以及Hook�
 3. 可指定app显示名称（Bundle Display Name）
 4. 可指定导出ipa的BundleIdentifier
 5. 证书id获取
+6. 查看app/ipa是否加密
+```
+
+执行以下命令，继续向下查看更多使用说明
+```bash
+./ltresign 或 python ltresign.py
 ```
 
 ![image](https://github.com/gltwy/LTResign/blob/master/show.png)
@@ -57,7 +63,7 @@ python ltresign.py -s test.app -d "iPhone Developer: test test (XXXXX)" -m embed
 ```
 
 #### 命令执行过程
-![image](https://github.com/gltwy/LTResign/blob/master/process.jpeg)
+![image](https://github.com/gltwy/LTResign/blob/master/process.png)
 
 ## 安装效果图
 ![image](https://github.com/gltwy/LTResign/blob/master/finished.jpeg)
