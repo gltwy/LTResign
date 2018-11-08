@@ -282,21 +282,29 @@ def glt_export_signInfo(embeddedMobileprovision):
     glt_supportdevices_count()
 
 
+def glt_configDisplayName(filePath):
+    printcmd = '/usr/libexec/PlistBuddy -x -c "Print :CFBundleDisplayName" %s >/dev/null 2>&1' % filePath
+    result = os.system(printcmd)
+    if result == 0:
+        cmd = '/usr/libexec/PlistBuddy -x -c "Set :CFBundleDisplayName %s" %s  >/dev/null 2>&1' % (
+            glt_name, filePath)
+        glt_cmd(cmd)
+    else:
+        cmd = '/usr/libexec/PlistBuddy -x -c "Set :CFBundleName %s" %s > /dev/null 2>&1' % (glt_name, filePath)
+        result = os.system(cmd)
+        if result != 0:
+            cmd = '/usr/libexec/PlistBuddy -x -c "Add :CFBundleDisplayName string %s" %s' % (
+                glt_name, filePath)
+            glt_cmd(cmd)
+
+
 def glt_updateNameWithPath(filePath):
-    cmd = '/usr/libexec/PlistBuddy -x -c "Set :CFBundleDisplayName %s" %s' % (glt_name, filePath)
-    glt_cmd(cmd)
+    glt_configDisplayName(filePath)
 
 
 def glt_updateNameWithInfoPlistPath(filePath):
     if filePath.endswith('.app/Info.plist'):
-        printcmd = '/usr/libexec/PlistBuddy -x -c "Print :CFBundleDisplayName" %s >/dev/null 2>&1' % filePath
-        result = os.system(printcmd)
-        if result == 0:
-            cmd = '/usr/libexec/PlistBuddy -x -c "Set :CFBundleDisplayName %s" %s' % (glt_name, filePath)
-            glt_cmd(cmd)
-        else:
-            cmd = '/usr/libexec/PlistBuddy -x -c "Set :CFBundleName %s" %s > /dev/null 2>&1' % (glt_name, filePath)
-            glt_cmd(cmd)
+        glt_configDisplayName(filePath)
 
 
 def glt_findInfoPlist():
@@ -306,11 +314,15 @@ def glt_findInfoPlist():
     glt_writeToFile(result)
 
 
-def glt_handle_app_names():
+def glt_findInfoPlistStrings():
     findCondition = '\\( -name "InfoPlist.strings" \\)'
     cmd = 'find -d \"%s\" %s' % (glt_tmpAppPath, findCondition)
     result = glt_cmd(cmd)
     glt_writeToFile(result)
+
+
+def glt_handle_app_names():
+    glt_findInfoPlistStrings()
     glt_readToFile(glt_updateNameWithPath)
     glt_findInfoPlist()
     glt_readToFile(glt_updateNameWithInfoPlistPath)
